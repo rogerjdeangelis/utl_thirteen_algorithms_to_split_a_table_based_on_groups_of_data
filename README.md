@@ -4,11 +4,14 @@ Thirteen algorithms to split a table based on groups of data. Keywords: sas sql 
 
     SAS-L: Thirteen algorithms to split a table based on groups of data;
 
+    see comments on end by
+    Paul Dorfman <sashole@bellsouth.net> comment on end
+
     github
     https://tinyurl.com/y6uzqbm2
     https://github.com/rogerjdeangelis/utl_thirteen_algorithms_to_split_a_table_based_on_groups_of_data
 
-      Tweleve Splitting Solutions
+      Thirteen Splitting Solutions
 
          1. Hash without sort Paul Dorfman
          2. Hash without sort Low memory Paul Dorfman
@@ -686,6 +689,52 @@ Thirteen algorithms to split a table based on groups of data. Keywords: sas sql 
 
 
 
+    *____             _
+    |  _ \ __ _ _   _| |
+    | |_) / _` | | | | |
+    |  __/ (_| | |_| | |
+    |_|   \__,_|\__,_|_|
+
+    ;
+
+
+    Roger,
+
+    A very long in the tooth "problem". IIRC correctly,
+    I saw a question like this on SAS-L first circa 1997.
+
+    Interestingly, the "solution" chosen by the OP is the worst possible since it reads the
+    input as many times are distinct cities plus one for the sorting.
+
+    Incidentally, my "HASH without sort Low memory" would essentially do the same. I offered
+    it in that 'sashelp.citimon" split thread because of its apparent oddity - kind of "never done before" thing.
+
+    The question is, what is the best approach overall. Weeding out those that have to reread
+    the input data set more than once, I see only these as viable:
+
+    1. By reading the input once, generate code for the DATA statement and an IF-THEN-ELSE of
+    SELECT structure. Then read the input for the second time and get all you need. The method
+    of generating code doesn't matter, whether it's a macro, CALL EXECUTE, DOSUB, PUT/%include, etc.
+    Advantage: Does not need any sorting.
+    Disadvantage: With too many output data sets (a few hundred, say), it's easy to get the
+    memory inundated by the buffers of all the output data set opened at compile since,
+    unlike with the SET statement, their opening cannot be deferred.
+
+    2. Sort and hash one BY group at a time using the OUTPUT method after each BY group.
+    Advantage: Only one output data set is opened at a time.
+    Disadvantage: Needing to sort. If the BY groups are more or less equal, memory usage is not an issue.
+
+    3. Same as #2 but index rather than sort. With a short key and lots of distinct values,
+    may be optimal. If one BY group is huge relative to the rest, may have a memory issue.
+
+    4. Hash of hashes.
+    Advantage: No sorting, a single pass through the input file. From the geek factor
+     POV, the most aesthetically pleasing of all.
+    Disadvantage: Memory. Need to be able to stick the entire input data set in there.
+
+    As always in computing: Give some, take some.
+
+    Best regards
 
 
 
