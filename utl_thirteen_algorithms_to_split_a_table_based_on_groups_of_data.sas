@@ -1,4 +1,4 @@
-Thirteen algorithms to split a table based on groups of data;
+Fourteen algorithms to split a table based on groups of data;
 
 see comments on end by
 Paul Dorfman <sashole@bellsouth.net> comment on end
