@@ -11,7 +11,7 @@ Thirteen algorithms to split a table based on groups of data. Keywords: sas sql 
     https://tinyurl.com/y6uzqbm2
     https://github.com/rogerjdeangelis/utl_thirteen_algorithms_to_split_a_table_based_on_groups_of_data
 
-      Thirteen Splitting Solutions
+      Fourteen Splitting Solutions
 
          1. Hash without sort Paul Dorfman
          2. Hash without sort Low memory Paul Dorfman
