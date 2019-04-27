@@ -42,7 +42,19 @@ Thirteen algorithms to split a table based on groups of data. Keywords: sas sql 
     see
     Novinosrin profile
     https://communities.sas.com/t5/user/viewprofilepage/user-id/138205
+    *                _              _       _
+     _ __ ___   __ _| | _____    __| | __ _| |_ __ _
+    | '_ ` _ \ / _` | |/ / _ \  / _` |/ _` | __/ _` |
+    | | | | | | (_| |   <  __/ | (_| | (_| | || (_| |
+    |_| |_| |_|\__,_|_|\_\___|  \__,_|\__,_|\__\__,_|
 
+    ;
+
+     proc report data=sashelp.cars nowd missing out=have(keep=_C10_--_C29_);
+     cols make, weight;
+     define make / across;
+     define weight / sum;
+     run;quit;
 
     INPUT
     =====
