@@ -3,6 +3,10 @@
 
     see comments on end by
     Paul Dorfman <sashole@bellsouth.net> comment on end
+    
+    github
+    https://tinyurl.com/y6uzqbm2                                                                         
+    https://github.com/rogerjdeangelis/utl_thirteen_algorithms_to_split_a_table_based_on_groups_of_data  
 
     github
     https://goo.gl/wD3EkA
