@@ -3,6 +3,10 @@ Fourteen algorithms to split a table based on groups of data;
 see comments on end by
 Paul Dorfman <sashole@bellsouth.net> comment on end
 
+githubs                                                                                             
+https://tinyurl.com/y6uzqbm2                                                                        
+https://github.com/rogerjdeangelis/utl_thirteen_algorithms_to_split_a_table_based_on_groups_of_data 
+
 github
 https://goo.gl/wD3EkA
 https://github.com/rogerjdeangelis/utl_five_algorithms_to_split_a_table_based_on_a_categorical_variable
